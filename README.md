@@ -10,6 +10,22 @@
 
 ___
 
+## Instalación python
+
+Esta es la [página](https://www.python.org/) oficial para descargar python
+
+Con el siguiente comando se puede checar la versión de python en el cmd.
+
+```
+python --version
+```
+
+
+
+
+
+
+
 ## Sintaxis
 
 ```python
