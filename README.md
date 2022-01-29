@@ -49,15 +49,15 @@ python a0_hola_mundo.py
 
 Los operadores son símbolos matemáticos con los que puedes hacer diversas operaciones. La tabla que se muestra a continuación indica la jerarquía de los operadores.
 
-| Operador | Operación       | Ejemplo | Resultado |
-| -------- | --------------- | ------- | --------- |
-| ******   | Potencia        | 2 ** 3  | 8         |
-| **%**    | Módulo/restante | 22 % 8  | 6         |
-| **//**   | División entera | 22 // 8 | 2         |
-| **/**    | División        | 22 / 8  | 2.75      |
-| *****    | Multiplicación  | 3 * 5   | 15        |
-| **-**    | Resta           | 5 - 2   | 3         |
-| **+**    | Suma            | 2 + 2   | 4         |
+| Operador | Operación       | Ejemplo   | Resultado |
+| -------- | --------------- | --------- | --------- |
+| **       | Potencia        | `2 ** 3`  | `8`       |
+| %        | Módulo/restante | `22 % 8`  | `6`       |
+| //       | División entera | `22 // 8` | `2`       |
+| /        | División        | `22 / 8`  | `2.75`    |
+| *        | Multiplicación  | `3 * 5`   | `15`      |
+| -        | Resta           | `5 - 2`   | `3`       |
+| +        | Suma            | `2 + 2`   | `4`       |
 
 
 
