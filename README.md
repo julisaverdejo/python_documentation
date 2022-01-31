@@ -91,22 +91,18 @@ La siguiente tabla está ordenada conforme a la prioridad que python le da a los
 
 **Funciones**
 
-| Función   | Descripción |
-| --------- | ----------- |
-| `print()` |             |
-| `input()` |             |
-| `len()`   |             |
-| `str()`   |             |
-| `int()`   |             |
-| `bool()`  |             |
-| `float()` |             |
-| `list()`  |             |
-| `tuple()` |             |
-| `range()` |             |
-
-
-
-
+| Función   | Descripción                                                  |
+| --------- | ------------------------------------------------------------ |
+| `print()` | Muestra en la pantalla del valor dentro del paréntesis.      |
+| `input()` | Esta función sirve para introducir valores.                  |
+| `len()`   | Cuenta el número de caracteres en una cadena, lista, diccionario y tupla. |
+| `str()`   | Convierte los tipos de dato int y float en cadena.           |
+| `int()`   | Convierte los tipos de dato str y float en entero.           |
+| `bool()`  | Convierte un int, string o float en booleano.                |
+| `float()` | Convierte un int o string en flotante.                       |
+| `list()`  | Convierte un string, tuple o diccionary en una lista.        |
+| `tuple()` | Convierte un string, list o diccionary en una tupla.         |
+| `range()` | Genera una secuencia de números, esta función puede tener hasta tres argumentos. `range(n)`: indica que la secuencia empezará en cero pero no incluirá el número n, es decir n-1; `range(n~1,n~2)`: es parecido a `range(n)` solo que la secuencia puede comenzar en el número que desees pero termina en (n~2  -1); `range(n1, n2, step)`: el tercer argumento indica cuantos pasos de separación habrá entre n1 y n2, step también puede ser un número negativo. |
 
 
 
