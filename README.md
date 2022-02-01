@@ -265,7 +265,32 @@ Algunas operaciones que puedes hacer con tuplas son:
 
 ## Diccionarios
 
+Un diccionario es un tipo de dato mutable, es una colección de muchos valores encerrados en llaves. A diferencia de las listas, los índices de los diccionarios pueden ser diferentes tipos de datos, no solo enteros.
 
+Los índices de los diccionarios se llaman keys y una key con su valor asociado se llama key-value pair. Los key y sus valores se separan con dos puntos.
+
+Ejemplo de un diccionario
+
+| myCat = {'size' : 'fat', 'color' : 'gray', 'disposition' : 'loud'} |
+| :----------------------------------------------------------: |
+
+Las key son 'size', 'color' y 'disposition'
+
+
+
+**Operaciones con diccionarios**
+
+
+
+**Métodos de diccionarios**
+
+| Método       | Definición  | Ejemplo |
+| ------------ | ----------- | ------- |
+| keys()       | Este método |         |
+| values()     |             |         |
+| items()      |             |         |
+| get()        |             |         |
+| setdefault() |             |         |
 
 
 
