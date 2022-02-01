@@ -145,7 +145,32 @@ none value
 
 ## Flow control statements
 
+El corazón de la programación se encuentra en las sentencias de control, Python (al igual que otros lenguajes de programación), tiene un conjunto de sentencias que permiten que tu programa pueda omitir instrucciones, repetirlas o elegir una de varias instrucciones para ejecutar.
+
+Las sentencias de control que ofrece Python son:
+
+1. Sentencias secuenciales : Son las sentencias que se ejecutan dependiendo del orden en que aparecen en el programa.
+2. Sentencias de decisión : Son aquellas que dependen de una condición, si esta es True o False, el programa puede omitir la ejecución de un bloque o ejecutar un bloque en lugar de otro. **If**, **else** y **elif** pertenecen a estas sentencias.
+3. Sentencias cíclicas : Estas estructuras de control ejecutan un bloque varias veces hasta que la condición del ciclo se cumpla. Los ciclos **for** y **while** son sentencias cíclicas.
+
 **if**
+
+La sentencia if ejecuta el código si la condición o expresión booleana es True, si es False entonces el programa no se ejecutará.
+
+Un if en Python debe tener lo siguiente:
+
+* La palabra if
+* Una condición que sea True o False
+* Dos puntos después de la condición
+* Una segunda línea de código identada (llamada if clause)
+
+<img src="C:\Users\Jules Verdejo\Desktop\python_documentation\Presentación1.jpg" alt="Presentación1" style="zoom:150%;" />
+
+
+
+
+
+
 
 **else**
 
