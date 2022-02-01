@@ -164,8 +164,6 @@ Un if en Python debe tener lo siguiente:
 * Dos puntos después de la condición
 * Una segunda línea de código identada (llamada if clause)
 
-<img src="C:\Users\Jules Verdejo\Desktop\python_documentation\Presentación1.jpg" alt="Presentación1" style="zoom:150%;" />
-
 
 
 
