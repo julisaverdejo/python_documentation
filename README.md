@@ -113,7 +113,7 @@ La siguiente tabla está ordenada conforme a la prioridad que python le da a los
 
 | Función      | Descripción                                                  |
 | ------------ | ------------------------------------------------------------ |
-| `print()`    | Muestra en la pantalla del valor dentro del paréntesis. Esta función tiene las palabras clave **end** y **sep**; con end puedes hacer que dos cadenas se impriman en la misma línea de código; con sep puedes separar varias cadenas con cualquier caracter. |
+| `print()`    | Muestra en la pantalla del valor dentro del paréntesis. Esta función tiene las palabras clave **end** y **sep**; con end puedes hacer que dos cadenas se impriman en la misma línea de código; con sep puedes separar varias cadenas con cualquier caracter. Con esta función también podemos unir cadenas que se encuentran en diferentes renglones`print('Te' + \ ' amo')`. En este caso ' amo' debería estar en otro renglón. |
 | `input()`    | Esta función sirve para introducir valores.                  |
 | `len()`      | Cuenta el número de caracteres en una cadena, lista, diccionario y tupla. |
 | `str()`      | Convierte los tipos de dato int y float en cadena.           |
@@ -173,32 +173,124 @@ Supongamos que tenemos la siguiente lista
 
 | Operación             | Definición                                                   | Ejemplo                                                      |
 | --------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Indexación            | Puedes acceder a cualquier valor de una lista. En caso de que una lista estuviera conformada de otras listas puedes acceder a cualquier lista y valor usando dos corchetes `spam[0][1]`. Los índices también pueden ser números negativos. | `spam[0] = ['cat', 'bat']                                         ` |
+| Indexación            | Puedes acceder a cualquier valor de una lista. En caso de que una lista estuviera conformada de otras listas puedes acceder a cualquier lista y valor usando dos corchetes `spam[0][1]`. Los índices también pueden ser números negativos. | `spam[0]`                                                    |
 | Concatenación         | Puedes concatenar listas con listas o con cadenas con el signo + | `'The ' + spam[0][-2] + ' is fat' = 'The cat is fat'`        |
-| Replicación           | La replicación de listas se da con el signo * y un número, el número indica cuantas veces se replicará la lista. | `['X','Y'] * 3 = ['X', 'Y', 'X', 'Y', 'X', 'Y']`             |
-| Slices                | Los slices son secciones que contienen más de un valor. Generalmente los slices tienen dos argumentos pero también pueden lucir así [:n] o así [n:], el primero indica que el slice iniciará en 0 hasta n-1 y el segundo que iniciará desde n hasta el final de la lista. Si en algún momento te encuentras un slice así [:] significa que abarcará todos los valores de una lista. | `spam[:2] = [['cat', 'bat'],['rat', 'elephant']] `           |
-| Eliminar valores      |                                                              |                                                              |
-| Longitud de una lista |                                                              |                                                              |
-| Conversión a listas   |                                                              |                                                              |
-| in                    |                                                              |                                                              |
-| not in                |                                                              |                                                              |
-| Asignación múltiple   |                                                              |                                                              |
+| Replicación           | La replicación de listas se da con el signo * y un número, el número indica cuantas veces se replicará la lista. | `['X','Y']*3`                                                |
+| Slices                | Los slices son secciones que contienen más de un valor. Generalmente los slices tienen dos argumentos pero también pueden lucir así [:n] o así [n:], el primero indica que el slice iniciará en 0 hasta n-1 y el segundo que iniciará desde n hasta el final de la lista. Si en algún momento te encuentras un slice así [:] significa que abarcará todos los valores de una lista. | `spam[:2]`                                                   |
+| Eliminar valores      | Podemos eliminar valores de una lista usando la sentencia `del` | `del spam[0]  `                                              |
+| Longitud de una lista | La longitud de una lista se hace usando la función `len()`   | `len(spam)`                                                  |
+| Conversión a listas   | Puedes convertir cualquier una cadena, diccionario o tupla en una lista | `list('Hola')`                                               |
+| in                    | Este operador se usa para saber si un valor está en una lista, el valor de retorno de este operador es True o False. | `'rat' in spam[1][0]`                                        |
+| not in                | Este operador se usa para saber si un valor no está en una lista, el valor de retorno de este operador es True o False. | `'gato' not in spam[1][0]`                                   |
+| Asignación múltiple   | Es un "atajo" que te permite asignar múltiples variables a una lista. | `cat = ['fat', 'black', 'loud']` `size, color, disposition = cat` |
 
 **Métodos de una lista**
 
-| Método     | Definición | Ejemplo |
-| ---------- | ---------- | ------- |
-| `index()`  |            |         |
-| `append()` |            |         |
-| `insert()` |            |         |
-| `remove()` |            |         |
-| `sort()`   |            |         |
+Un método es parecido a una función, después del nombre de la lista sigue un punto y después el método. El argumento de los métodos siempre serán valores nunca a índices (números).
+
+Supongamos que tenemos las siguientes listas:
+
+```python
+>>> bacon = ['Ciro', 'Yoye', 26, 'enero']
+>>> spam = [4, 0, -20, 33, 1, 7, 4, 55]
+```
+
+| Método     | Definición                                                   | Ejemplo                  |
+| ---------- | ------------------------------------------------------------ | ------------------------ |
+| `index()`  | Devuelve el índice de cierto valor en una lista. Si ingresas un valor que no esté dentro de la lista, python, enviará un mensaje de error. Si tienes valores repetidos en una lista, el método  `index()`, devolverá el índice del valor repetido que aparezca primero. | `bacon.index('Ciro')`    |
+| `append()` | Este método agrega un valor al final de la lista.            | `bacon.append('guapo')`  |
+| `insert()` | Agrega un valor en cualquier posición de la lista. Este método consta de dos argumentos `insert(i,v)`, siendo `i` el índice (o posición) en la cual quieres que se agregue el nuevo valor y `v` es el valor que deseas ingresar en la lista. | `bacon.insert(1,'amor')` |
+| `remove()` | Este método quita un valor de la lista. Si un valor se encuentra repetido solo se quitará el valor que aparezca primero. | `bacon.remove('amor')`   |
+| `sort()`   | Ordena valores de menor a mayor, también de mayor a menor para esto debes usar `nombredelalista.sort(reverse=True)`y alfabéticamente, pero este método ordena primero las mayúsculas y después las minúsculas si quieres que `sort()` ordene los valores de la forma tradicional debes usar lo siguiente `nombredelalista.sort(key = str.lower)`. | `spam.sort()`            |
+
+> Los métodos append e insert solo son válidos para las listas, además nunca se asignan a una variable porque el valor de retorno de estos métodos es None.
+
+> El método sort no ordena listas que tengan int y strings.
+
+
+
+**Ciclo for en listas**
+
+```python
+#Este código funciona para cualquier lista sin importar cuantos valores tenga
+>>> supplies = ['pens', 'staplers', 'flame-throwers', 'binders']
+>>> for i in range(len(supplies)):
+	print('Index ' + str(i) + ' in supplies is: ' + supplies[i])
+
+	
+Index 0 in supplies is: pens
+Index 1 in supplies is: rulers
+Index 2 in supplies is: eraser
+Index 3 in supplies is: sharpener
+```
+
+
+
+## Tuplas
+
+Una tupla es un tipo de dato inmutable y ordenado, los valores de las tuplas van dentro de paréntesis.
+
+Los beneficios de usar una tupla son los siguientes
+
+1. Si necesitas una **secuencia ordenada de valores que nunca cambie** usa una tupla.
+2. Python **ejecuta el código más rápido** con tuplas debido a que estas son inmutables
+3. Indican a cualquier persona que lea tu código que no tienes intención de cambiar cierta secuencia de valores.
+
+Algunas operaciones que puedes hacer con tuplas son:
+
+```python
+#Para acceder a un valor de una tupla se hace por medio de índices.
+>>> diego = ('7', 'godzilla', '31 minutos')
+>>> diego[0]
+'7'
+
+#Si quieres acceder a varios valores se hace por medio de slices
+>>> diego[1:3]
+('godzilla', '31 minutos')
+
+#También puedes saber cuantos valores tiene una tupla usando len()
+>>> len(diego)
+3
+
+#Para indicar que una tupla tiene un solo valor se hace lo siguiente
+>>> julie = ('orizaba',)
+>>> type(julie)
+
+#Puedes convertir una lista, cadena y diccionario a tupla
+>>> tuple(['cat', 'dog', 5])	
+('cat', 'dog', 5)
+```
+
+
+
+## Diccionarios
 
 
 
 
 
+## Cadenas
 
+Una cadena es un tipo de dato inmutable y se define por usar comillas simples.
+
+**Operaciones con cadenas**
+
+```python
+>>> name = 'Zophie'
+```
+
+| Operación     | Ejemplo            |
+| ------------- | ------------------ |
+| Concatenación | `'Julie' + 'Ciro'` |
+| Replicación   | `'Julie' * 3`      |
+| Indexación    | `name[0]`          |
+| Slices        | `name[1:3]`        |
+| in            | `'Zo' in name`     |
+| not in        | `'p' not in name`  |
+
+
+
+**Métodos de cadenas**
 
 
 
