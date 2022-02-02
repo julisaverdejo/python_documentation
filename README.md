@@ -280,15 +280,29 @@ print(total)
 
 
 
-
-
-
-
 **break y continue**
 
-Definirlos
+Estas sentencias sirven para controlar código dentro de un ciclo **while** o **for**.
 
-Hacer ejemplos con ciclos for y while
+**break** : Salta a la primera línea **fuera del ciclo**, siempre y cuando la condición del ciclo sea verdadera.
+
+**continue** : Hace que el programa vaya inmediatamente al **inicio del ciclo** y **reevalúe** la condición.
+
+```python
+#Uso de sentencias break y continue en ciclo while
+while True:
+    print('Who are you?')
+    name = input()
+    if name != 'Julie':
+        continue #Irá al inicio del ciclo si name!=Julie
+    print('Hello, Julie. What is the password? (Name of your pet)')
+    password = input()
+    if password == 'blacki': #Irá al inicio de ciclo si la 										 #contraseña no es blacki
+        break				 #Cuando la contraseña es correcta 									 #entonces salimos del ciclo.
+print('Access granted.')
+```
+
+
 
 
 
