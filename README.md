@@ -149,9 +149,9 @@ El corazón de la programación se encuentra en las sentencias de control, Pytho
 
 Las sentencias de control que ofrece Python son:
 
-1. Sentencias secuenciales : Son las sentencias que se ejecutan dependiendo del orden en que aparecen en el programa.
-2. Sentencias de decisión : Son aquellas que dependen de una condición, si esta es True o False, el programa puede omitir la ejecución de un bloque o ejecutar un bloque en lugar de otro. **If**, **else** y **elif** pertenecen a estas sentencias.
-3. Sentencias cíclicas : Estas estructuras de control ejecutan un bloque varias veces hasta que la condición del ciclo se cumpla. Los ciclos **for** y **while** son sentencias cíclicas.
+1. **Sentencias secuenciales** : Son las sentencias que se ejecutan dependiendo del orden en que aparecen en el programa.
+2. **Sentencias de decisión** : Son aquellas que dependen de una condición, si esta es True o False, el programa puede omitir la ejecución de un bloque o ejecutar un bloque en lugar de otro. **If**, **else** y **elif** pertenecen a estas sentencias.
+3. **Sentencias cíclicas** : Estas estructuras de control ejecutan un bloque varias veces hasta que la condición del ciclo se cumpla. Los ciclos **for** y **while** son sentencias cíclicas.
 
 **if**
 
@@ -162,21 +162,133 @@ Un if en Python debe tener lo siguiente:
 * La palabra if
 * Una condición que sea True o False
 * Dos puntos después de la condición
-* Una segunda línea de código identada (llamada if clause)
+* Un bloque de código identado (llamada if clause)
 
+```python
+#Ejemplo de una sentencia if
+print('What is your name?')
+name = input()
 
-
-
+if name == 'Julie':
+    print('Hello ' + name)
+```
 
 
 
 **else**
 
+La sentencia else puede ir seguida de un if cuando la condición de esta es False; *else no tiene condición* y en Python se define de la siguiente manera:
+
+* La palabra clave else
+* Dos puntos
+* Un bloque de código identado (else clause)
+
+```python
+#Ejemplo de una sentencia else
+print('What is your name?')
+name = input()
+
+if name == 'Julie':
+    print('Hello ' + name)
+else:
+    print('Hello, stranger')
+```
+
+
+
 **elif**
+
+Esta sentencia es útil cuando necesitas definir varias opciones posibles; elif puede ir seguido de un if o de un mismo elif; además es la abreviación de else if.
+
+En Python elif se define como sigue:
+
+* La palabra elif
+* Una condición que tiene como valor True o False
+* Dos puntos
+* Un bloque de código identado (elif clause)
+
+*Ejemplo* : Escribe un programa que te de una puntuación entre 0.0 y 1.0. Si la puntuación es cero o mayor a 1 imprime 'Calificación incorrecta'
+
+| Score  | Grade |
+| ------ | ----- |
+| >= 0.9 | A     |
+| >= 0.8 | B     |
+| <= 0.7 | F     |
+
+```python
+score = float(input('Ingresa una puntuación: '))
+if score < 0 or score > 1:
+    print('Calificación incorrecta')
+elif score >= 0.9:
+    print('A')
+elif score >= 0.8:
+    print('B')
+else:
+    print('F')
+```
+
+
 
 **while**
 
+Un ciclo while puede hacer que un bloque de código se *ejecute una y otra vez* (iteración) solo si la *condición es True*, cuando sea False el ciclo terminará. El ciclo while se define de la siguiente forma:
+
+* La palabra while
+* Una condición que devuelva un valor booleano
+* Dos puntos
+* Un bloque de código identado
+
+*Ejemplo*: Realizar la suma de los números del 1 al 100
+
+```python
+total = 0
+num = 0
+i = 0
+while i < 101:
+    total = total + num
+    num += 1
+    i += 1
+print(total)
+```
+
+
+
 **for**
+
+Un ciclo for ejecuta un bloque de código *determinado número de veces* y esto lo puede hacer con la función `range()`.
+
+En Python este ciclo se define así:
+
+* La palabra for
+* Una variable
+* La palabra **in**
+* Función `range()`
+* Dos puntos
+* Un bloque de código identado
+
+> No necesariamente tienes que ocupar la función `range()`, en su lugar puedes usar una lista, tupla, cadena o diccionario.
+
+*Ejemplo* : Realizar la suma de los números del 1 al 100
+
+```python
+total = 0
+for i in range(101):	#La variable es i
+    total = total + i
+
+print(total)
+```
+
+
+
+
+
+
+
+**break y continue**
+
+Definirlos
+
+Hacer ejemplos con ciclos for y while
 
 
 
@@ -199,7 +311,7 @@ Supongamos que tenemos la siguiente lista
 | Indexación            | Puedes acceder a cualquier valor de una lista. En caso de que una lista estuviera conformada de otras listas puedes acceder a cualquier lista y valor usando dos corchetes `spam[0][1]`. Los índices también pueden ser números negativos. | `spam[0]`                                                    |
 | Concatenación         | Puedes concatenar listas con listas o con cadenas con el signo + | `'The ' + spam[0][-2] + ' is fat' = 'The cat is fat'`        |
 | Replicación           | La replicación de listas se da con el signo * y un número, el número indica cuantas veces se replicará la lista. | `['X','Y']*3`                                                |
-| Slices                | Los slices son secciones que contienen más de un valor. Generalmente los slices tienen dos argumentos pero también pueden lucir así [:n] o así [n:], el primero indica que el slice iniciará en 0 hasta n-1 y el segundo que iniciará desde n hasta el final de la lista. Si en algún momento te encuentras un slice así [:] significa que abarcará todos los valores de una lista. | `spam[:2]`                                                   |
+| Slices                | Los slices son secciones que contienen más de un valor. Generalmente los slices tienen dos argumentos pero también pueden lucir así `[:n]` o así `[n:]`, el primero indica que el slice iniciará en 0 hasta n-1 y el segundo que iniciará desde n hasta el final de la lista. Si en algún momento te encuentras un slice así `[:]` significa que abarcará todos los valores de una lista. | `spam[:2]`                                                   |
 | Eliminar valores      | Podemos eliminar valores de una lista usando la sentencia `del` | `del spam[0]  `                                              |
 | Longitud de una lista | La longitud de una lista se hace usando la función `len()`   | `len(spam)`                                                  |
 | Conversión a listas   | Puedes convertir cualquier una cadena, diccionario o tupla en una lista | `list('Hola')`                                               |
@@ -209,7 +321,7 @@ Supongamos que tenemos la siguiente lista
 
 **Métodos de una lista**
 
-Un método es parecido a una función, después del nombre de la lista sigue un punto y después el método. El argumento de los métodos siempre serán valores nunca a índices (números).
+Un método es parecido a una función, después del nombre de la lista sigue un punto y después el método. El argumento de los métodos siempre serán valores nunca índices (números).
 
 Supongamos que tenemos las siguientes listas:
 
@@ -223,12 +335,12 @@ Supongamos que tenemos las siguientes listas:
 | `index()`  | Devuelve el índice de cierto valor en una lista. Si ingresas un valor que no esté dentro de la lista, python, enviará un mensaje de error. Si tienes valores repetidos en una lista, el método  `index()`, devolverá el índice del valor repetido que aparezca primero. | `bacon.index('Ciro')`    |
 | `append()` | Este método agrega un valor al final de la lista.            | `bacon.append('guapo')`  |
 | `insert()` | Agrega un valor en cualquier posición de la lista. Este método consta de dos argumentos `insert(i,v)`, siendo `i` el índice (o posición) en la cual quieres que se agregue el nuevo valor y `v` es el valor que deseas ingresar en la lista. | `bacon.insert(1,'amor')` |
-| `remove()` | Este método quita un valor de la lista. Si un valor se encuentra repetido solo se quitará el valor que aparezca primero. | `bacon.remove('amor')`   |
+| `remove()` | Este método quita un valor de la lista. Si un valor se encuentra repetido solo se quitará el valor que aparezca primero. | `bacon.remove(26)`       |
 | `sort()`   | Ordena valores de menor a mayor, también de mayor a menor para esto debes usar `nombredelalista.sort(reverse=True)`y alfabéticamente, pero este método ordena primero las mayúsculas y después las minúsculas si quieres que `sort()` ordene los valores de la forma tradicional debes usar lo siguiente `nombredelalista.sort(key = str.lower)`. | `spam.sort()`            |
 
 > Los métodos append e insert solo son válidos para las listas, además nunca se asignan a una variable porque el valor de retorno de estos métodos es None.
 
-> El método sort no ordena listas que tengan int y strings.
+> El método sort no ordena listas que tengan dos tipos de datos, por ejemplo: int y strings.
 
 
 
