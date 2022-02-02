@@ -217,7 +217,7 @@ En Python elif se define como sigue:
 
 ```python
 score = float(input('Ingresa una puntuación: '))
-if score < 0 or score > 1:
+if score <= 0 or score > 1:
     print('Calificación incorrecta')
 elif score >= 0.9:
     print('A')
