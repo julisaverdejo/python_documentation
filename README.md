@@ -109,7 +109,27 @@ La siguiente tabla está ordenada conforme a la prioridad que python le da a los
 
 
 
-**Funciones**
+## Funciones
+
+Las funciones son miniprogramas dentro de tu programa y son muy importantes en Python. Supongamos que tienes un conjunto de instrucciones que debe ejecutarse varias veces en tu programa. En lugar de escribir esas instrucciones repetidamente, se puede usar una función para realizar esa acción.
+
+Una función se escribe una sola vez pero puedes ejecutarla tantas veces como quieras en tu programa. El uso de funciones **evita las redundancias en tu código**. Puedes usar funciones integradas o **definirlas tú mismo**.
+
+
+
+**Cómo definir una función**
+
+return values
+
+none value
+
+**Variables locales y globales**
+
+**Manejo de errores con try/except**
+
+
+
+**Funciones integradas en python**
 
 | Función      | Descripción                                                  |
 | ------------ | ------------------------------------------------------------ |
@@ -126,20 +146,6 @@ La siguiente tabla está ordenada conforme a la prioridad que python le da a los
 | `sys.exit()` | Termina un programa inmediatamente.                          |
 | `copy()`     |                                                              |
 | `paste()`    |                                                              |
-
-
-
-## Definir una función
-
-Agregar como se define una funcion
-
-return values
-
-none value
-
-**Variables locales y globales**
-
-**Manejo de errores con try/except**
 
 
 
@@ -357,7 +363,7 @@ Supongamos que tenemos la siguiente lista
 
 **Métodos de una lista**
 
-Un método es parecido a una función, después del nombre de la lista sigue un punto y después el método. El argumento de los métodos siempre serán valores nunca índices (números).
+Un método es parecido a una función, después del nombre de la lista sigue un punto y después el método. El argumento de los métodos siempre serán valores nunca índices.
 
 Supongamos que tenemos las siguientes listas:
 
