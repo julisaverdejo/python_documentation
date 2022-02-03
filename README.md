@@ -122,7 +122,7 @@ La siguiente tabla está ordenada conforme a la prioridad que python le da a los
 | `float()`    | Convierte un int o string en flotante.                       |
 | `list()`     | Convierte un string, tuple o diccionary en una lista.        |
 | `tuple()`    | Convierte un string, list o diccionary en una tupla.         |
-| `range()`    | Genera una secuencia de números, esta función puede tener hasta tres argumentos. `range(n)`: indica que la secuencia empezará en cero pero no incluirá el número n, es decir n-1; `range(n1, n2)`: es parecido a `range(n)` solo que la secuencia puede comenzar en el número que desees pero termina en (n~2~-1); `range(n1, n2, step)`: el tercer argumento indica cuantos pasos de separación habrá entre n~1~ y n~2~, step también puede ser un número negativo. |
+| `range()`    | Genera una secuencia de números, esta función puede tener hasta tres argumentos, los cuales pueden ser números positivos o negativos. `range(n)`: Indica que la secuencia empieza en cero y termina en n-1; `range(n1, n2)`: Es parecido a `range(n)` pero la secuencia comienza en el número que desees; `range(n1, n2, step)`: Con `range(n)` y `range(n1,n2)` el step por default es 1, pero lo puedes modificar indicando cuantos pasos de separación habrá entre n~1~ y n~2~. |
 | `sys.exit()` | Termina un programa inmediatamente.                          |
 | `copy()`     |                                                              |
 | `paste()`    |                                                              |
@@ -290,6 +290,7 @@ Estas sentencias sirven para controlar código dentro de un ciclo **while** o **
 
 ```python
 #Ejemplo de ciclo while con break y continue
+#Este programa pregunta por tu nombre y contraseña
 while True:
     print('Who are you?')
     name = input()
@@ -302,20 +303,27 @@ while True:
 print('Access granted.')
 ```
 
-
+```python
+#Ejemplo de ciclo for con break:Programa que indica si un número es primo o no 
+number = int(input('Enter a number > 1: '))
+prime = True
+for i in range(2,number):   #range(n,n) hará que el ciclo for no se ejecute
+    if number % i == 0:
+        prime = False
+        break
+if prime:
+    print(str(number) + ' is a prime number')
+else:
+    print(str(number) + ' is not a prime number')
+```
 
 ```python
-#Ejemplo de ciclo for con break y continue
-print('Ingresa un mensaje')
-cadena = input()
-for i in cadena:
-    if i != ' ':
-        print(i)
+#Ejemplo de ciclo for con continue
+#Este programa identifica si hay una letra i en la cadena, si existe no la imprime
+for val in 'string':
+    if val == 'i':
         continue
-    else:
-        break
-    
-print('Done')
+    print(val)
 ```
 
 
@@ -428,7 +436,7 @@ Algunas operaciones que puedes hacer con tuplas son:
 
 ## Diccionarios
 
-Un diccionario es un tipo de dato mutable, es una colección de muchos valores encerrados en llaves. A diferencia de las listas, los índices de los diccionarios pueden ser diferentes tipos de datos, no solo enteros.
+Un diccionario es un tipo de dato mutable, es una colección de muchos valores encerrados en llaves. A diferencia de las listas, los **índices** de los diccionarios pueden ser **diferentes tipos de datos**, no solo enteros.
 
 Los índices de los diccionarios se llaman keys y una key con su valor asociado se llama key-value pair. Los key y sus valores se separan con dos puntos.
 
