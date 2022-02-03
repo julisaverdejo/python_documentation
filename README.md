@@ -289,7 +289,7 @@ Estas sentencias sirven para controlar código dentro de un ciclo **while** o **
 **continue** : Hace que el programa vaya inmediatamente al **inicio del ciclo** y **reevalúe** la condición.
 
 ```python
-#Uso de sentencias break y continue en ciclo while
+#Ejemplo de ciclo while con break y continue
 while True:
     print('Who are you?')
     name = input()
@@ -303,6 +303,20 @@ print('Access granted.')
 ```
 
 
+
+```python
+#Ejemplo de ciclo for con break y continue
+print('Ingresa un mensaje')
+cadena = input()
+for i in cadena:
+    if i != ' ':
+        print(i)
+        continue
+    else:
+        break
+    
+print('Done')
+```
 
 
 
