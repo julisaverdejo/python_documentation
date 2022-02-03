@@ -297,8 +297,8 @@ while True:
         continue #Irá al inicio del ciclo si name!=Julie
     print('Hello, Julie. What is the password? (Name of your pet)')
     password = input()
-    if password == 'blacki': #Irá al inicio de ciclo si la 										 #contraseña no es blacki
-        break				 #Cuando la contraseña es correcta 									 #entonces salimos del ciclo.
+    if password == 'blacki': #Irá al inicio de ciclo si la contraseña no es blacki
+        break	#Cuando la contraseña es correcta entonces salimos del ciclo.
 print('Access granted.')
 ```
 
