@@ -109,23 +109,137 @@ La siguiente tabla está ordenada conforme a la prioridad que python le da a los
 
 
 
+## Variables
+
+Una variable es como una caja en la memoria de tu computadora, esta caja solo puede almacenar un valor.
+
+Para nombrar una variable debes tomar en cuenta lo siguiente
+
+1. Puede usarse solo una palabra
+2. Solo se pueden utilizar letras, números y guión bajo.
+3. No puede empezar con un número.
+
+```python
+>>> spam = 40
+>>> spam
+40
+
+>>> spam = 'Hello'		# Una variable se puede reescribir y olvidar
+>>> spam + ' World'		# su antiguo valor
+'Hello World'
+```
+
+
+
 ## Funciones
 
 Las funciones son miniprogramas dentro de tu programa y son muy importantes en Python. Supongamos que tienes un conjunto de instrucciones que debe ejecutarse varias veces en tu programa. En lugar de escribir esas instrucciones repetidamente, se puede usar una función para realizar esa acción.
 
 Una función se escribe una sola vez pero puedes ejecutarla tantas veces como quieras en tu programa. El uso de funciones **evita las redundancias en tu código**. Puedes usar funciones integradas o **definirlas tú mismo**.
 
-
-
 **Cómo definir una función**
 
-return values
+Para definir una función en Python creada por ti debes seguir la sintaxis presentada a continuación:
 
-none value
+```python
+def function_name(parameter_1, parameter_2,..., parameter_n):
+    statement(s)
+```
+
+1. Usar la palabra **def**
+
+2. Escribir el **nombre de la función**. El nombre puede tener letras, números y guión bajo pero no puede empezar con un número.
+
+3. **Argumentos** encerrados entre paréntesis y separados por comas. Algunas funciones no tienen argumentos.
+
+4. Dos puntos
+
+5. Bloque de código identado (`statement(s)`)
+
+   
+
+> Definir una función no significa que el programa la ejecute, solo la estamos nombrando y especificando que es lo que hace cuando esta sea llamada.
+
+> Una función debe ser definida antes de ser llamada.
+
+
+
+**Return values and return statements**
+
+Al crear una función, puedes especificar qué valor devolverá con la sentencia **return**, esta consiste de lo siguiente:
+
+1. La palabra return
+2. El valor o expresión que la función devolverá
+
+Si una función no cuenta con la sentencia return el valor por default que devuelve es **None** (es la ausencia de valor), a estas funciones se les llama **void functions**. 
+
+> La función `print()` devuelve un valor None.
+
+
 
 **Variables locales y globales**
 
+En python existen dos tipos de entornos: *global* y *local*, los cuales tienen sus respectivas variables:
+
+**Global** : Son aquellas que están definidas fuera de una función y estas son destruídas cuando el programa termina.
+
+**Local** : Son todas las variables definidas dentro de una función. Una variable local es creada y destruída cada vez que una función es llamada y ningún código fuera de la función puede acceder a ella.
+
+Existen algunas reglas que se deben aplicar al momento de definir las variables globales y locales:
+
+1. Las variables locales no pueden usarse en un entorno global.
+2. Entornos locales no pueden usar variables definidas en otros entornos locales.
+3. Evita nombrar igual a variables locales y globales.
+4. Las variables globales pueden usarse en entornos locales, si necesitas modificar una variable global desde dentro de una función, usa la declaración `global`.
+
+
+
 **Manejo de errores con try/except**
+
+Cuando tienes un error en tu código todo tu programa fallará, mandará un mensaje de error y la ejecución se detendrá, lo ideal sería que tu programa detecte el error y siga ejecutándose. Esto es posible usando las sentencias try y except.
+
+Cuando el código dentro de una sentencia try tiene un error, el programa rápidamente salta a la sentencia except, después de esto la ejecución del código sigue igual.
+
+**Ejemplo de función y sentencias try y except**
+
+Supongamos que quieres hacer una función que divida el número 42 con cualquier número, el código se vería así:
+
+```python
+def divide(number):
+    return 42 / number
+
+print(divide(2))
+print(divide(0))	#El programa marcará un error
+print(divide(6))
+
+
+#El programa devuelve lo siguiente
+>>> print(divide(2))
+21.0
+>>> print(divide(0))
+Traceback (most recent call last):
+  File "<pyshell#4>", line 1, in <module>
+    print(divide(0))
+  File "<pyshell#2>", line 2, in divide
+    return 42 / number
+ZeroDivisionError: division by zero
+```
+
+El programa marcará un error ZeroDivisionError debido a que ningún número es divisible entre cero, pero podemos mejorar el código con try y except.
+
+```python
+def divide(number):
+    try: 
+    	return 42 / number
+    except ZeroDivisionError:
+        print('Argumento no válido')
+
+print(divide(2))
+print(divide(0))	
+print(divide(6))
+```
+
+> No es necesario escribir el tipo de error en except, si no escribes el programa funciona igual.
 
 
 
@@ -448,10 +562,11 @@ Los índices de los diccionarios se llaman keys y una key con su valor asociado 
 
 Ejemplo de un diccionario
 
-| myCat = {'size' : 'fat', 'color' : 'gray', 'disposition' : 'loud'} |
-| :----------------------------------------------------------: |
+```python
+myCat = {'size':'fat', 'color', 'gray', 'disposition':'loud'}
+```
 
-Las key son 'size', 'color' y 'disposition'
+Las key son `'size'`,  `'color'` y `'disposition'`
 
 
 
