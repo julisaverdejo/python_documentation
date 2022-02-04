@@ -200,6 +200,10 @@ Cuando tienes un error en tu código todo tu programa fallará, mandará un mens
 
 Cuando el código dentro de una sentencia try tiene un error, el programa rápidamente salta a la sentencia except, después de esto la ejecución del código sigue igual.
 
+> Las sentencias try y except pueden ser utilizadas en funciones.
+
+
+
 **Ejemplo de función y sentencias try y except**
 
 Supongamos que quieres hacer una función que divida el número 42 con cualquier número, el código se vería así:
