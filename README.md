@@ -82,14 +82,18 @@ Estos operadores sirven de "atajo" en python para dejar de escribir la variable 
 
 Los operadores de comparación devuelven valores booleanos: True o False.
 
-| Operador | Significado     |
-| -------- | --------------- |
-| ==       | Igual a         |
-| !=       | Diferente a     |
-| <        | Menor que       |
-| >        | Mayor que       |
-| <=       | Menor o igual a |
-| >=       | Mayor o igual a |
+| Operador | Significado                                                  |          |
+| -------- | ------------------------------------------------------------ | -------- |
+| ==       | Igual a                                                      |          |
+| !=       | Diferente a                                                  |          |
+| <        | Menor que                                                    |          |
+| >        | Mayor que                                                    |          |
+| <=       | Menor o igual a                                              |          |
+| >=       | Mayor o igual a                                              |          |
+| is       | Identity : Será `True` si y solo si a y b son lo mismo (elementos) | `a is b` |
+| is not   | Negated identity: Será `True` si a y b no son lo mismo       |          |
+| in       | Containment test                                             |          |
+| not in   | Negated containment test                                     |          |
 
 
 
