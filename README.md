@@ -54,13 +54,13 @@ Los operadores son símbolos matemáticos con los que puedes hacer diversas oper
 
 | Operador | Operación       | Ejemplo   | Resultado |
 | -------- | --------------- | --------- | --------- |
-| **       | Potencia        | `2 ** 3`  | `8`       |
-| %        | Módulo/restante | `22 % 8`  | `6`       |
-| //       | División entera | `22 // 8` | `2`       |
-| /        | División        | `22 / 8`  | `2.75`    |
-| *        | Multiplicación  | `3 * 5`   | `15`      |
-| -        | Resta           | `5 - 2`   | `3`       |
-| +        | Suma            | `2 + 2`   | `4`       |
+| `**`     | Potencia        | `2 ** 3`  | `8`       |
+| `%`      | Módulo/restante | `22 % 8`  | `6`       |
+| `//`     | División entera | `22 // 8` | `2`       |
+| `/`      | División        | `22 / 8`  | `2.75`    |
+| `*`      | Multiplicación  | `3 * 5`   | `15`      |
+| `-`      | Resta           | `5 - 2`   | `3`       |
+| `+`      | Suma            | `2 + 2`   | `4`       |
 
 
 
@@ -82,18 +82,18 @@ Estos operadores sirven de "atajo" en python para dejar de escribir la variable 
 
 Los operadores de comparación devuelven valores booleanos: True o False.
 
-| Operador | Significado                                                  |          |
-| -------- | ------------------------------------------------------------ | -------- |
-| ==       | Igual a                                                      |          |
-| !=       | Diferente a                                                  |          |
-| <        | Menor que                                                    |          |
-| >        | Mayor que                                                    |          |
-| <=       | Menor o igual a                                              |          |
-| >=       | Mayor o igual a                                              |          |
-| is       | Identity : Será `True` si y solo si a y b son lo mismo (elementos) | `a is b` |
-| is not   | Negated identity: Será `True` si a y b no son lo mismo       |          |
-| in       | Containment test                                             |          |
-| not in   | Negated containment test                                     |          |
+| Operador | Operación                | Descripción  |
+| -------- | ------------------------ | ------------ |
+| ==       | Igual a                  | `a == b`     |
+| !=       | Diferente a              | `a != b`     |
+| <        | Menor que                | `a < b`      |
+| >        | Mayor que                | `a > b`      |
+| <=       | Menor o igual a          | `a <= b`     |
+| >=       | Mayor o igual a          | `a >= b`     |
+| is       | Identity                 | `a is b`     |
+| is not   | Negated identity         | `a is not b` |
+| in       | Containment test         | `a in b`     |
+| not in   | Negated containment test | `a not in b` |
 
 
 
@@ -105,9 +105,9 @@ La siguiente tabla está ordenada conforme a la prioridad que python le da a los
 
 | Operador | Descripción                                                  |
 | -------- | ------------------------------------------------------------ |
-| and      | Devuelve un valor False cuando una de sus condiciones no se cumple. Si todas las condiciones se cumplen entonces devolverá un True. |
-| or       | Siempre devolverá un True cuando al menos una de sus condiciones se cumpla. Si las condiciones no se cumplen entonces devolverá un False. |
-| not      | Devuelve el operador inverso de una condición, si una condición es True entonces será False y viceversa. |
+| `and`    | Devuelve un valor False cuando una de sus condiciones no se cumple. Si todas las condiciones se cumplen entonces devolverá un True. |
+| `or`     | Siempre devolverá un True cuando al menos una de sus condiciones se cumpla. Si las condiciones no se cumplen entonces devolverá un False. |
+| `not`    | Devuelve el operador inverso de una condición, si una condición es True entonces será False y viceversa. |
 
 > Una cadena en blanco, los números 0 y 0.0 también son valores False, todos los demás son True.
 
@@ -353,6 +353,28 @@ elif score >= 0.8:
     print('B')
 else:
     print('F')
+```
+
+
+
+**x if C else y**
+
+A veces llamado *operador ternario* tiene la prioridad más baja de todas las operaciones de python.
+
+La expresión primero evalúa la condición **C** en lugar de **x**. Si **C** es **verdadero**, se evalúa **x** y se devuelve su valor, de lo contrario, se evalúa **y** y se devuelve su valor.
+
+Es similar a un **if else** normal, pero el operador ternario tiene la ventaja de que se evalúa en una sola línea.
+
+```python
+number = 15
+# if else normal
+if number%2 == 0:
+    print('par')
+else:
+    print('impar')
+    
+#Operador ternario
+print('par' if (number%2 == 0) else 'impar')
 ```
 
 
@@ -652,7 +674,9 @@ rebanadas de pan 6
 
 ## Cadenas
 
-Una cadena es un tipo de dato inmutable y se define por usar comillas simples.
+Una cadena es un tipo de dato inmutable y puede ser definida con comillas simples `''` o dobles `""`. Las cadenas multilíneas se definen con tres comillas simples `'''` o triples comillas dobles `"""`.
+
+
 
 **Operaciones con cadenas**
 
@@ -673,7 +697,11 @@ Una cadena es un tipo de dato inmutable y se define por usar comillas simples.
 
 **Métodos de cadenas**
 
-
+| Método | Definición | Sintaxis |
+| ------ | ---------- | -------- |
+|        |            |          |
+|        |            |          |
+|        |            |          |
 
 
 
