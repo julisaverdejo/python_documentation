@@ -253,21 +253,23 @@ print(divide(6))
 
 **Funciones integradas en python**
 
-| Función      | Descripción                                                  |
-| ------------ | ------------------------------------------------------------ |
-| `print()`    | Muestra en la pantalla del valor dentro del paréntesis. Esta función tiene las palabras clave **end** y **sep**; con end puedes hacer que dos cadenas se impriman en la misma línea de código; con sep puedes separar varias cadenas con cualquier caracter. Con esta función también podemos unir cadenas que se encuentran en diferentes renglones`print('Te' + \ ' amo')`. En este caso ' amo' debería estar en otro renglón. |
-| `input()`    | Esta función sirve para introducir valores.                  |
-| `len()`      | Cuenta el número de caracteres en una cadena, lista, diccionario y tupla. |
-| `str()`      | Convierte los tipos de dato int y float en cadena.           |
-| `int()`      | Convierte los tipos de dato str y float en entero.           |
-| `bool()`     | Convierte un int, string o float en booleano.                |
-| `float()`    | Convierte un int o string en flotante.                       |
-| `list()`     | Convierte un string, tuple o diccionary en una lista.        |
-| `tuple()`    | Convierte un string, list o diccionary en una tupla.         |
-| `range()`    | Genera una secuencia de números, esta función puede tener hasta tres argumentos, los cuales pueden ser números positivos o negativos. `range(n)`: Indica que la secuencia empieza en cero y termina en n-1; `range(n1, n2)`: Es parecido a `range(n)` pero la secuencia comienza en el número que desees; `range(n1, n2, step)`: Con `range(n)` y `range(n1,n2)` el step por default es 1, pero lo puedes modificar indicando cuantos pasos de separación habrá entre n~1~ y n~2~. |
-| `sys.exit()` | Termina un programa inmediatamente.                          |
-| `copy()`     |                                                              |
-| `paste()`    |                                                              |
+| Función              | Descripción                                                  |
+| -------------------- | ------------------------------------------------------------ |
+| `print()`            | Muestra en la pantalla del valor dentro del paréntesis. Esta función tiene las palabras clave **end** y **sep**; con end puedes hacer que dos cadenas se impriman en la misma línea de código; con sep puedes separar varias cadenas con cualquier caracter. Con esta función también podemos unir cadenas que se encuentran en diferentes renglones`print('Te' + \ ' amo')`. En este caso ' amo' debería estar en otro renglón. |
+| `input()`            | Esta función sirve para introducir valores.                  |
+| `len()`              | Cuenta el número de caracteres en una cadena, lista, diccionario y tupla. |
+| `str()`              | Convierte los tipos de dato int y float en cadena.           |
+| `int()`              | Convierte los tipos de dato str y float en entero.           |
+| `bool()`             | Convierte un int, string o float en booleano.                |
+| `float()`            | Convierte un int o string en flotante.                       |
+| `list()`             | Convierte un string, tuple o dictionary en una lista.        |
+| `tuple()`            | Convierte un string, list o diccionary en una tupla.         |
+| `range()`            | Genera una secuencia de números, esta función puede tener hasta tres argumentos, los cuales pueden ser números positivos o negativos. `range(n)`: Indica que la secuencia empieza en cero y termina en n-1; `range(n1, n2)`: Es parecido a `range(n)` pero la secuencia comienza en el número que desees; `range(n1, n2, step)`: Con `range(n)` y `range(n1,n2)` el step por default es 1, pero lo puedes modificar indicando cuantos pasos de separación habrá entre n~1~ y n~2~. |
+| `sys.exit()`         | Termina un programa inmediatamente.                          |
+| `copy()`             |                                                              |
+| `paste()`            |                                                              |
+| `sum()`              | Suma todos los elementos de un tipo de dato iterable, como list, tuple, diccionaries and set. |
+| `sorted(<iterable>)` | Devuelve una lista ordenada de los elementos de un tipo de dato iterable (list, str, tuples, dictionary, sets). Esta función puede llegar a tener hasta tres argumentos. |
 
 
 
@@ -478,9 +480,36 @@ for val in 'string':
 
 
 
-## Listas
+## Referencias
 
-Una lista es un tipo de dato mutable que contiene múltiples valores en una secuencia ordenada, los valores de una lista se llaman items y se encuentran encerrados entre corchetes.
+
+
+## List
+
+Una lista es un tipo de dato **mutable** que contiene múltiples valores en una secuencia ordenada, los valores de una lista se llaman items y se encuentran encerrados entre corchetes.
+
+Para facilitar la lectura de una lista se pueden usar saltos de línea cuando hay muchos elementos o estructuras anidadas dentro de una lista.
+
+```python
+>>> flowers = [
+    'rose'
+    'sunflower'
+    'tulip' 
+]
+
+>>> animals = [
+    {'fish':'gold', 'monkey': 'brown'},
+    ('mammal', 'bird')
+    ['water', 'jungle']
+]
+```
+
+Para acceder a los índices de una lista puede hacerse de izquierda a derecha, los índices serán números positivos y el primer elemento tendrá el índice **0**, pero si deseas acceder a los índices de derecha a izquierda los índices serán negativos y el último elemento tendrá el índice **-1**.
+
+| left → right |   0    |   1    |   2    |   3    |   4    |   5    |                  |
+| :----------: | :----: | :----: | :----: | :----: | :----: | :----: | :--------------: |
+|              |   p    |   y    |   t    |   h    |   o    |   n    |                  |
+|              | **-6** | **-5** | **-4** | **-3** | **-2** | **-1** | **right → left** |
 
 **Operaciones con listas**
 
@@ -500,7 +529,7 @@ Supongamos que tenemos la siguiente lista
 | Slices                | Los slices son secciones que contienen más de un valor. Generalmente los slices tienen dos argumentos pero también pueden lucir así `[:n]` o así `[n:]`, el primero indica que el slice iniciará en 0 hasta n-1 y el segundo que iniciará desde n hasta el final de la lista. Si en algún momento te encuentras un slice así `[:]` significa que abarcará todos los valores de una lista. | `spam[:2]`                                                   |
 | Eliminar valores      | Podemos eliminar valores de una lista usando la sentencia `del` | `del spam[0]  `                                              |
 | Longitud de una lista | La longitud de una lista se hace usando la función `len()`   | `len(spam)`                                                  |
-| Conversión a listas   | Puedes convertir cualquier una cadena, diccionario o tupla en una lista | `list('Hola')`                                               |
+| Conversión a listas   | Puedes convertir cualquier un str, dictionary o tuple en una lista | `list('Hola')`                                               |
 | in                    | Este operador se usa para saber si un valor está en una lista, el valor de retorno de este operador es True o False. | `'rat' in spam[1][0]`                                        |
 | not in                | Este operador se usa para saber si un valor no está en una lista, el valor de retorno de este operador es True o False. | `'gato' not in spam[1][0]`                                   |
 | Asignación múltiple   | Es un "atajo" que te permite asignar múltiples variables a una lista. | `cat = ['fat', 'black', 'loud']` `size, color, disposition = cat` |
@@ -522,7 +551,7 @@ Supongamos que tenemos las siguientes listas:
 | `append()`                  | Este método agrega un valor al final de la lista.            | `bacon.append('guapo')`     |
 | `insert()`                  | Agrega un valor en cualquier posición de la lista. Este método consta de dos argumentos `insert(i,v)`, siendo `i` el índice (o posición) en la cual quieres que se agregue el nuevo valor y `v` es el valor que deseas ingresar en la lista. | `bacon.insert(1,'amor')`    |
 | `remove()`                  | Este método quita un valor de la lista. Si un valor se encuentra repetido solo se quitará el valor que aparezca primero. | `bacon.remove(26)`          |
-| `sort()`                    | Ordena valores de menor a mayor, también de mayor a menor para esto debes usar `nombredelalista.sort(reverse=True)`y alfabéticamente, pero este método ordena primero las mayúsculas y después las minúsculas si quieres que `sort()` ordene los valores de la forma tradicional debes usar lo siguiente `nombredelalista.sort(key = str.lower)`. | `spam.sort()`               |
+| `sort()`                    | Ordena valores de menor a mayor, también de mayor a menor para esto debes usar `nombredelalista.sort(reverse=True)`y alfabéticamente, pero este método ordena primero las mayúsculas y después las minúsculas si quieres que `sort()` ordene los valores de la forma tradicional debes usar lo siguiente `nombredelalista.sort(key = str.lower)`. En caso de que no quieras mutar la lista original puedes usar la función `sorted(<iterable>)` y esta te devolverá una copia de la lista ordenada. | `spam.sort()`               |
 | `extend(item)`              | Combina listas con otros tipos de datos con elementos iterables como set, tuple, str o list. Los elementos son transformados a listas y son anexados a la lista de forma ordenada. | `bacon.extend(spam)`        |
 | `pop(<index>)`              | Toma un index, elimina el item de la lista y lo devuelve, si el index no es ingresado, entonces el método eliminará el último elemento de la lista. | `bacon.pop(-1)`             |
 | `clear()`                   | Elimina todos los elementos de una lista, a este método no se le ingresan argumentos. | `bacon.clear()`             |
@@ -552,7 +581,7 @@ Index 3 in supplies is: sharpener
 
 
 
-## Tuplas
+## Tuple
 
 Una tupla es un tipo de dato inmutable y ordenado, los valores de las tuplas van dentro de paréntesis.
 
@@ -589,7 +618,7 @@ Algunas operaciones que puedes hacer con tuplas son:
 
 
 
-## Diccionarios
+## Dictionary
 
 Un diccionario es un tipo de dato mutable, es una colección de muchos valores encerrados en llaves. A diferencia de las listas, los **índices** de los diccionarios pueden ser **diferentes tipos de datos**, no solo enteros.
 
@@ -687,9 +716,46 @@ Si importas el módulo `pprint` en tus programas. tendrás acceso a las funcione
 
 
 
-## Cadenas
+## Strings
 
 Una cadena es un tipo de dato inmutable y puede ser definida con comillas simples `''` o dobles `""`. Las cadenas multilíneas se definen con tres comillas simples `'''` o triples comillas dobles `"""`.
+
+> Con cadenas multilíneas también podemos hacer comentarios en nuestro código.
+
+
+
+**Escape characters**
+
+Un caracter de escape te permite utilizar caracteres que serían imposibles usar en un string. Por ejemplo, si queremos escribir la siguiente string `'That is Alice's cat'`, python creerá que la cadena termina en `Alice`, para indicar que `'s cat` también forma parte de la cadena, usamos un backslash \ seguido de `Alice`.
+
+```python
+>>> 'That is Alice's cat'
+SyntaxError: invalid syntax
+    
+>>> 'That is Alice\'s cat'
+"That is Alice's cat"
+```
+
+Python tiene los siguientes caracteres de escape
+
+| Escape character | Prints as            |
+| ---------------- | -------------------- |
+| `\'`             | Single quote         |
+| `\"`             | Double quote         |
+| `\t`             | Tab                  |
+| `\n`             | Newline (line break) |
+| `\\`             | Blackslash           |
+
+> Tab, newline y blackslash funcionan si usas la función print.
+
+```python
+>>> print('Hola\ncomo\nestan?')
+Hola
+como
+estan?
+```
+
+> raw strings son cadenas que ignoran todos los caracteres de escape, este tipo de cadenas llevan una r, `r'That is Carol\'s cat` →  `That is Carol\'s cat`
 
 
 
@@ -712,11 +778,49 @@ Una cadena es un tipo de dato inmutable y puede ser definida con comillas simple
 
 **Métodos de cadenas**
 
-| Método | Definición | Sintaxis |
-| ------ | ---------- | -------- |
-|        |            |          |
-|        |            |          |
-|        |            |          |
+Supongamos que tenemos la siguiente cadena
+
+```python
+>>> mensaje = ' el arte de amar por eric fromm '
+>>> mensaje_2 = 'ME ENCANTA EL CHOCOLATE'
+>>> contraseña = 'CH0co14t325'
+>>> numbers = '12345'
+```
+
+| Método                                          | Definición                                                   | Sintaxis               |
+| ----------------------------------------------- | ------------------------------------------------------------ | ---------------------- |
+| `upper()`                                       | Devuelve una copia de la cadena con todas las letras en mayúsculas. | `mensaje.upper()`      |
+| `lower()`                                       | Devuelve una copia de la cadena con todas las letras en minúsculas. | `mensaje_2.lower()`    |
+| `isupper()`                                     | Devuelve `True` si todas las letras en una cadena son mayúsculas. | `mensaje_2.isupper()`  |
+| `islower()`                                     | Devuelve `True` si todas las letras en una cadena son minúsculas. | `mensaje_2.islower()`  |
+| `isalpha()`                                     | Devuelve `True` si la cadena consiste solo de letras y no tiene espacios en blanco. | `mensaje.isalpha()`    |
+| `isalnum()`                                     | Devuelve `True ` si la cadena consiste de números y letras y no tiene espacios en blanco. | `contraseña.isalnum()` |
+| `isdecimal()`                                   | Devuelve `True` si la cadena solo está compuesta de caracteres numéricos y no tiene espacios en blanco. | `numbers.isdecimal()`  |
+| `isspace()`                                     | Devuelve `True` si la cadena solo tiene espacios en blanco, tabs, nuevas lineas, si la cadena está en blanco devolverá `False`. | `'\t'.isspace()`       |
+| `istitle()`                                     | Devuelve `True` si todas las palabras de la cadena inician con mayúsculas, seguidas de minúsculas. | `mensaje_2.istitle()`  |
+| `startswith()`                                  |                                                              |                        |
+| `endswith()`                                    |                                                              |                        |
+| `join()`                                        |                                                              |                        |
+| `split()`                                       | Elimina elementos de los extremos de una cadena; `strip()` devuelve una cadena sin espacios al principio y al final de la cadena. |                        |
+| `rjust()`                                       |                                                              |                        |
+| `ljust()`                                       |                                                              |                        |
+| `center()`                                      |                                                              |                        |
+| `strip()`                                       |                                                              |                        |
+| `rstrip()`                                      |                                                              |                        |
+| `lstrip()`                                      |                                                              |                        |
+| `title()`                                       | Cambia a mayúscula el primer caracter de cada palabra encontrada. |                        |
+| `replace(<substring>, <replacement substring>)` | Toma un substring y lo reemplaza con replacement substring.  |                        |
+
+> Los métodos isX son muy útiles al momentos de validar la entrada del usuario.
+>
+> ```python
+> while True:
+>     print('Enter your age:')
+>     age = input()
+>     if age.isdecimal():
+>         break
+>     print('Please enter a number for your age')
+> ```
 
 
 
