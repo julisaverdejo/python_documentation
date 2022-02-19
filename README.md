@@ -529,7 +529,7 @@ Supongamos que tenemos las siguientes listas:
 | `reverse()`                | Invierte los elementos de una lista.                         | `spam.reverse()`            |
 | `count(<item>)`            | Devuelve el número de veces que aparece un item en una lista. | `spam.count(4)`             |
 
-> Los métodos append e insert solo son válidos para las listas, además nunca se asignan a una variable porque el valor de retorno de estos métodos es None.
+> Los métodos append, insert, remove y sort solo son válidos para las listas, además nunca se asignan a una variable porque el valor de retorno de estos métodos es None.
 
 > El método sort no ordena listas que tengan dos tipos de datos, por ejemplo: int y strings.
 
