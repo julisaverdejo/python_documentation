@@ -512,17 +512,22 @@ Un método es parecido a una función, después del nombre de la lista sigue un 
 Supongamos que tenemos las siguientes listas:
 
 ```python
->>> bacon = ['Ciro', 'Yoye', 26, 'enero']
+>>> bacon = ['Ciro', 'Yoye', 26, 'enero', 'Ciro']
 >>> spam = [4, 0, -20, 33, 1, 7, 4, 55]
 ```
 
-| Método     | Definición                                                   | Ejemplo                  |
-| ---------- | ------------------------------------------------------------ | ------------------------ |
-| `index()`  | Devuelve el índice de cierto valor en una lista. Si ingresas un valor que no esté dentro de la lista, python, enviará un mensaje de error. Si tienes valores repetidos en una lista, el método  `index()`, devolverá el índice del valor repetido que aparezca primero. | `bacon.index('Ciro')`    |
-| `append()` | Este método agrega un valor al final de la lista.            | `bacon.append('guapo')`  |
-| `insert()` | Agrega un valor en cualquier posición de la lista. Este método consta de dos argumentos `insert(i,v)`, siendo `i` el índice (o posición) en la cual quieres que se agregue el nuevo valor y `v` es el valor que deseas ingresar en la lista. | `bacon.insert(1,'amor')` |
-| `remove()` | Este método quita un valor de la lista. Si un valor se encuentra repetido solo se quitará el valor que aparezca primero. | `bacon.remove(26)`       |
-| `sort()`   | Ordena valores de menor a mayor, también de mayor a menor para esto debes usar `nombredelalista.sort(reverse=True)`y alfabéticamente, pero este método ordena primero las mayúsculas y después las minúsculas si quieres que `sort()` ordene los valores de la forma tradicional debes usar lo siguiente `nombredelalista.sort(key = str.lower)`. | `spam.sort()`            |
+| Método                     | Definición                                                   | Ejemplo                     |
+| -------------------------- | ------------------------------------------------------------ | --------------------------- |
+| `index(<item>, star, end)` | Devuelve el índice de cierto valor en una lista. Si ingresas un valor que no esté dentro de la lista, python, enviará un mensaje de error. Si tienes valores repetidos en una lista, el método  `index()`, devolverá el índice del valor repetido que aparezca primero, pero también puedes especificar en que sección de la lista buscar el índice con `star` y `end`. | `bacon.index('Ciro', 1, 5)` |
+| `append()`                 | Este método agrega un valor al final de la lista.            | `bacon.append('guapo')`     |
+| `insert()`                 | Agrega un valor en cualquier posición de la lista. Este método consta de dos argumentos `insert(i,v)`, siendo `i` el índice (o posición) en la cual quieres que se agregue el nuevo valor y `v` es el valor que deseas ingresar en la lista. | `bacon.insert(1,'amor')`    |
+| `remove()`                 | Este método quita un valor de la lista. Si un valor se encuentra repetido solo se quitará el valor que aparezca primero. | `bacon.remove(26)`          |
+| `sort()`                   | Ordena valores de menor a mayor, también de mayor a menor para esto debes usar `nombredelalista.sort(reverse=True)`y alfabéticamente, pero este método ordena primero las mayúsculas y después las minúsculas si quieres que `sort()` ordene los valores de la forma tradicional debes usar lo siguiente `nombredelalista.sort(key = str.lower)`. | `spam.sort()`               |
+| `extend(item)`             | Combina listas con otros tipos de datos con elementos iterables como set, tuple, str o list. Los elementos son transformados a listas y son anexados a la lista de forma ordenada. | `bacon.extend(spam)`        |
+| `pop(<index>)`             | Toma un index, elimina el item de la lista y lo devuelve, si el index no es ingresado, entonces el método eliminará el último elemento de la lista. | `bacon.pop(-1)`             |
+| `clear()`                  | Elimina todos los elementos de una lista, a este método no se le ingresan argumentos. | `bacon.clear()`             |
+| `reverse()`                | Invierte los elementos de una lista.                         | `spam.reverse()`            |
+| `count(<item>)`            | Devuelve el número de veces que aparece un item en una lista. | `spam.count(4)`             |
 
 > Los métodos append e insert solo son válidos para las listas, además nunca se asignan a una variable porque el valor de retorno de estos métodos es None.
 
@@ -669,6 +674,16 @@ plátano 1
 kg de frijol 100
 rebanadas de pan 6
 ```
+
+
+
+**Pretty Printing**
+
+Si importas el módulo `pprint` en tus programas. tendrás acceso a las funciones `pprint()` y `pformat()`, estas funciones imprimirán de forma elegante los valores de un diccionario.
+
+`pprint.pprint()`: Es útil cuando el propio diccionarios contiene listas anidadas o diccionarios.
+
+`pprint.pformat`: Devuelve el texto como un string en lugar de mostrarlo en la pantalla.
 
 
 
