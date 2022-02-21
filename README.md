@@ -778,49 +778,81 @@ estan?
 
 **Métodos de cadenas**
 
+Todos los métodos de cadenas devuelven una nueva cadena, no modifican a la cadena original. Recordemos que una cadena es un tipo de dato inmutable.
+
 Supongamos que tenemos la siguiente cadena
 
 ```python
->>> mensaje = ' el arte de amar por eric fromm '
+>>> mensaje = '		el arte de amar por eric fromm		'
 >>> mensaje_2 = 'ME ENCANTA EL CHOCOLATE'
 >>> contraseña = 'CH0co14t325'
 >>> numbers = '12345'
 ```
 
-| Método                                          | Definición                                                   | Sintaxis               |
-| ----------------------------------------------- | ------------------------------------------------------------ | ---------------------- |
-| `upper()`                                       | Devuelve una copia de la cadena con todas las letras en mayúsculas. | `mensaje.upper()`      |
-| `lower()`                                       | Devuelve una copia de la cadena con todas las letras en minúsculas. | `mensaje_2.lower()`    |
-| `isupper()`                                     | Devuelve `True` si todas las letras en una cadena son mayúsculas. | `mensaje_2.isupper()`  |
-| `islower()`                                     | Devuelve `True` si todas las letras en una cadena son minúsculas. | `mensaje_2.islower()`  |
-| `isalpha()`                                     | Devuelve `True` si la cadena consiste solo de letras y no tiene espacios en blanco. | `mensaje.isalpha()`    |
-| `isalnum()`                                     | Devuelve `True ` si la cadena consiste de números y letras y no tiene espacios en blanco. | `contraseña.isalnum()` |
-| `isdecimal()`                                   | Devuelve `True` si la cadena solo está compuesta de caracteres numéricos y no tiene espacios en blanco. | `numbers.isdecimal()`  |
-| `isspace()`                                     | Devuelve `True` si la cadena solo tiene espacios en blanco, tabs, nuevas lineas, si la cadena está en blanco devolverá `False`. | `'\t'.isspace()`       |
-| `istitle()`                                     | Devuelve `True` si todas las palabras de la cadena inician con mayúsculas, seguidas de minúsculas. | `mensaje_2.istitle()`  |
-| `startswith()`                                  |                                                              |                        |
-| `endswith()`                                    |                                                              |                        |
-| `join()`                                        |                                                              |                        |
-| `split()`                                       | Elimina elementos de los extremos de una cadena; `strip()` devuelve una cadena sin espacios al principio y al final de la cadena. |                        |
-| `rjust()`                                       |                                                              |                        |
-| `ljust()`                                       |                                                              |                        |
-| `center()`                                      |                                                              |                        |
-| `strip()`                                       |                                                              |                        |
-| `rstrip()`                                      |                                                              |                        |
-| `lstrip()`                                      |                                                              |                        |
-| `title()`                                       | Cambia a mayúscula el primer caracter de cada palabra encontrada. |                        |
-| `replace(<substring>, <replacement substring>)` | Toma un substring y lo reemplaza con replacement substring.  |                        |
+| Método                                          | Definición                                                   | Sintaxis                              |
+| ----------------------------------------------- | ------------------------------------------------------------ | ------------------------------------- |
+| `upper()`                                       | Devuelve una copia de la cadena con todas las letras en mayúsculas. | `mensaje.upper()`                     |
+| `lower()`                                       | Devuelve una copia de la cadena con todas las letras en minúsculas. | `mensaje_2.lower()`                   |
+| `isupper()`                                     | Devuelve `True` si todas las letras en una cadena son mayúsculas. | `mensaje_2.isupper()`                 |
+| `islower()`                                     | Devuelve `True` si todas las letras en una cadena son minúsculas. | `mensaje_2.islower()`                 |
+| `isalpha()`                                     | Devuelve `True` si la cadena consiste solo de letras y no tiene espacios en blanco. | `mensaje.isalpha()`                   |
+| `isalnum()`                                     | Devuelve `True ` si la cadena consiste de números y letras y no tiene espacios en blanco. | `contraseña.isalnum()`                |
+| `isdecimal()`                                   | Devuelve `True` si la cadena solo está compuesta de caracteres numéricos y no tiene espacios en blanco. | `numbers.isdecimal()`                 |
+| `isspace()`                                     | Devuelve `True` si la cadena solo tiene espacios en blanco, tabs, nuevas lineas, si la cadena está en blanco devolverá `False`. | `'\t'.isspace()`                      |
+| `istitle()`                                     | Devuelve `True` si todas las palabras de la cadena inician con mayúsculas, seguidas de minúsculas. | `mensaje_2.istitle()`                 |
+| `startswith(<prefix>)`                          | Devuelve `True` si la cadena comienza con `<prefix>`.        | `mensaje_2.startswith('ME')`          |
+| `endswith(<suffix>)`                            | Devuelve `True` si la cadena termina con `<suffix>`.         | `mensaje_2.endswith('CHOCOLATE')`     |
+| `join()`                                        | Combina listas, tuplas, cadenas, sets o cualquier otra colección de cadenas con otra cadena y devuelve una nueva. Cualquier cadena puede ser utilizada para unir cadenas, incluso emojis. | `', '.join(['cats', 'rats', 'bats'])` |
+| `split()`                                       | Devuelve una lista de strings separadas (sin ingresar argumentos).  Este método también sirve para eliminar elementos de las cadenas; `split()[<index>]` eliminará un valor en la cadena y `split('value')` eliminará todos los value que aparezcan en la cadena. | `mensaje_2.split()`                   |
+| `rjust(s, caracter)`                            | Justifica (agrega espacios) una cadena hacia la derecha; la justificará `s - len(string)` espacios. Este método puede tener un segundo argumento, con este argumento podemos rellenar los espacios de la cadena con algún caracter u otra cadena. | `hello.rjust(10, '*')`                |
+| `ljust()`                                       | Justifica una cadena hacia la izquierda, este método también puede tener dos argumentos. | `hello.ljust(10,'-')`                 |
+| `center()`                                      | Justifica una cadena hacia el centro y agrega espacios tanto a la derecha como a la izquierda. También puede tener dos argumentos. | `hello.center(20,'=')`                |
+| `strip()`                                       | Elimina elementos de los extremos de una cadena; `strip()` devuelve una cadena sin espacios en blanco al principio y al final de la cadena. | `mensaje.strip()`                     |
+| `rstrip()`                                      | Elimina espacios en blanco que se encuentren a la derecha de la cadena. | `mensaje.rstrip()`                    |
+| `lstrip()`                                      | Elimina espacios en blanco que se encuentren a la izquierda de la cadena. | `mensaje.lstrip()`                    |
+| `title()`                                       | Cambia a mayúscula el primer caracter de cada palabra encontrada. | `mensaje.title()`                     |
+| `replace(<substring>, <replacement substring>)` | Toma un substring y lo reemplaza con replacement substring.  | `'salt&pepper'.replace('&', ' & ')`   |
 
-> Los métodos isX son muy útiles al momentos de validar la entrada del usuario.
->
-> ```python
-> while True:
->     print('Enter your age:')
->     age = input()
->     if age.isdecimal():
->         break
->     print('Please enter a number for your age')
-> ```
+
+
+> Nota 1
+
+Los métodos isX son muy útiles al momentos de validar la entrada del usuario.
+
+```python
+while True:
+ print('Enter your age:')
+ age = input()
+ if age.isdecimal():
+     break
+ print('Please enter a number for your age')
+```
+
+> Nota 2
+
+Los métodos `ljust()`, `rjust()` y `center()` son útiles cuando quieres imprimir datos de manera tabular.
+
+```python
+def printPicnic(itemsDict, leftWidth, rightWidth):
+	print('PICNIC ITEMS'.center(leftWidth + rightWidth, '-'))
+	for k, v in itemsDict.items():
+		print(k.ljust(leftWidth, '.') + str(v).rjust(rightWidth))
+
+picnicItems = {'sandwiches': 4, 'apples': 12, 'cups': 4, 'cookies': 8000}
+printPicnic(picnicItems, 12, 5)
+
+
+---PICNIC ITEMS--
+sandwiches.. 4
+apples...... 12
+cups........ 4
+cookies..... 8000
+>>>
+```
+
+
+
+
 
 
 
