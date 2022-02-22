@@ -852,6 +852,21 @@ cookies..... 8000
 
 
 
+**String formatting**
+
+Con los caracteres **%s** puedes crear cadenas. Más específicamente, **%s** convierte un valor especificado en una cadena usando la función `str()`.
+
+```python
+>>> name = 'Alice'
+>>> place = 'Main Street'
+>>> time = '6 pm'
+>>> food = 'turnips'
+>>> 'Hello %s, you are invite to a party at %s at %s. Please bring %s.'%(name,place,time,food)
+'Hello Alice, you are invite to a party at Main Street at 6 pm. Please bring turnips.'
+```
+
+> Usar %s hace más fácil la concatenación de strings.
+
 
 
 
