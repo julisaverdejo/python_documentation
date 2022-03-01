@@ -611,6 +611,7 @@ Algunas operaciones que puedes hacer con tuplas son:
 >>> julie = ('orizaba',)
 >>> type(julie)
 
+
 #Puedes convertir una lista, cadena y diccionario a tupla
 >>> tuple(['cat', 'dog', 5])	
 ('cat', 'dog', 5)
@@ -686,7 +687,8 @@ cocina = {'manzana': 5, 'plátano': 1, 'kg de frijol': 100, 'rebanadas de pan': 
 | `values()`     | Devuelve un tipo de dato dict con todos los valores de tu diccionario | `cocina.values()`                              |
 | `items()`      | Devuelve un tipo de dato dict que contiene todos los key-value pairs en tuplas. Estas tuplas tienen dos valores cada una. | `cocina.items()`                               |
 | `get()`        | Este método devuelve un valor asociado con la key especificada en el diccionario. Consta de dos argumentos `(key, default)`, si la key que ingresaste no existe en el diccionario entonces `get()` devuelve el valor `default` (puede ser cualquier tipo de dato). Si no proporcionaste ningún valor `default`entonces el método regresará un tipo de valor None, de modo que este método nunca generará un **KeyError**. | `cocina.get('kiwi', 'No tienes en la cocina')` |
-| `setdefault()` | Este método ingresa una key y un value a tu diccionario, solo si esta key no existe, en caso de que la key ya existiera el método devolverá el valor de la key original y si quieres cambiar el valor de la key ingresada no puedes cambiarlo porque la key ya existe en el diccionario. | `cocina.setdefault('pera', '3')`               |
+| `setdefault()` | Este método ingresa una key y un value a tu diccionario, solo si esta key no existe, en caso de que la key ya existiera el método devolverá el valor de la key original. | `cocina.setdefault('pera', '3')`               |
+| `pop(<key>)`   | Elimina el par key-value y devuelve value. Si ingresamos una key que no esté en el diccionario tendremos un KeyError, para evitar ese error podemos ingresar un segundo argumento, `default`, `pop()` devolverá el valor `default`. | `cocina.pop('kiwi', 'Unknown')`                |
 
 > Los tipos de datos dict no pueden manejarse con facilidad por lo tanto es mejor convertirlos a listas. `list(cocina.keys())`
 
