@@ -270,6 +270,7 @@ print(divide(6))
 | `paste()`            |                                                              |
 | `sum()`              | Suma todos los elementos de un tipo de dato iterable, como list, tuple, diccionaries and set. |
 | `sorted(<iterable>)` | Devuelve una lista ordenada de los elementos de un tipo de dato iterable (list, str, tuples, dictionary, sets). Esta función puede llegar a tener hasta tres argumentos. |
+| `zip()`              | Devuelve una secuencia que agrega elementos de iterables (listas, strings o diccionarios). Si pasas dos iterables, uno que contiene dos elementos y otro que contiene cinco elementos, entonces la función `zip()` devuelve una secuencia de dos tuplas. Con un único argumento iterable, devuelve un iterador de una tupla. Sin argumentos, devuelve un iterador vacío. Esta función puedes usarla para relacionar iterables en un ciclo for. |
 
 
 
@@ -526,7 +527,7 @@ Supongamos que tenemos la siguiente lista
 | Indexación            | Puedes acceder a cualquier valor de una lista. En caso de que una lista estuviera conformada de otras listas puedes acceder a cualquier lista y valor usando dos corchetes `spam[0][1]`. Los índices también pueden ser números negativos. | `spam[0]`                                                    |
 | Concatenación         | Puedes concatenar listas con listas o con cadenas con el signo + | `'The ' + spam[0][-2] + ' is fat' = 'The cat is fat'`        |
 | Replicación           | La replicación de listas se da con el signo * y un número, el número indica cuantas veces se replicará la lista. | `['X','Y']*3`                                                |
-| Slices                | Los slices son secciones que contienen más de un valor. Generalmente los slices tienen dos argumentos pero también pueden lucir así `[:n]` o así `[n:]`, el primero indica que el slice iniciará en 0 hasta n-1 y el segundo que iniciará desde n hasta el final de la lista. Si en algún momento te encuentras un slice así `[:]` significa que abarcará todos los valores de una lista. | `spam[:2]`                                                   |
+| Slicing               | Los slices son secciones que contienen más de un valor. Generalmente los slices tienen dos argumentos pero también pueden lucir así `[:n]` o así `[n:]`, el primero indica que el slice iniciará en 0 hasta n-1 y el segundo que iniciará desde n hasta el final de la lista. Si en algún momento te encuentras un slice así `[:]` significa que abarcará todos los valores de una lista. | `spam[:2]`                                                   |
 | Eliminar valores      | Podemos eliminar valores de una lista usando la sentencia `del` | `del spam[0]  `                                              |
 | Longitud de una lista | La longitud de una lista se hace usando la función `len()`   | `len(spam)`                                                  |
 | Conversión a listas   | Puedes convertir cualquier un str, dictionary o tuple en una lista | `list('Hola')`                                               |
@@ -583,39 +584,45 @@ Index 3 in supplies is: sharpener
 
 ## Tuple
 
-Una tupla es un tipo de dato inmutable y ordenado, los valores de las tuplas van dentro de paréntesis.
+Una tupla es un tipo de dato inmutable y ordenado, los valores de las tuplas van dentro de paréntesis y separados por comas.
+
++ Las tuplas pueden almacenar cualquier tipo de dato.
++ Las tuplas son iterables, por lo tanto puede emplearse el ciclo for y `enumerate(<tuple>)` 
++ Cualquier estructura de dato incluyendo las mismas tuplas pueden  anidarse en una tupla.
++ Si conviertes un `str` a `tuple` cada caracter del `str` será un elemento en la tupla.
 
 Los beneficios de usar una tupla son los siguientes
 
-1. Si necesitas una **secuencia ordenada de valores que nunca cambie** usa una tupla.
+1. Es una **secuencia ordenada de valores que nunca cambia**.
 2. Python **ejecuta el código más rápido** con tuplas debido a que estas son inmutables
 3. Indican a cualquier persona que lea tu código que no tienes intención de cambiar cierta secuencia de valores.
 
-Algunas operaciones que puedes hacer con tuplas son:
+
+
+**Operaciones con tuplas**
 
 ```python
-#Para acceder a un valor de una tupla se hace por medio de índices.
->>> diego = ('7', 'godzilla', '31 minutos')
->>> diego[0]
-'7'
-
-#Si quieres acceder a varios valores se hace por medio de slices
->>> diego[1:3]
-('godzilla', '31 minutos')
-
-#También puedes saber cuantos valores tiene una tupla usando len()
->>> len(diego)
-3
-
-#Para indicar que una tupla tiene un solo valor se hace lo siguiente
->>> julie = ('orizaba',)
->>> type(julie)
-
-
-#Puedes convertir una lista, cadena y diccionario a tupla
->>> tuple(['cat', 'dog', 5])	
-('cat', 'dog', 5)
+>>>	tupla = (5,2,1,4,6,3)
 ```
+
+| Operación       | Definición                                                   | Ejemplo                |
+| --------------- | ------------------------------------------------------------ | ---------------------- |
+| `len()`         | Esta función devuelve el número de elementos en una tupla.   | `len(tupla)`           |
+| `sum()`         | La función devuelve la suma de números en una tupla.         | `sum(tupla)`           |
+| `sorted()`      | Devuelve una copia ordenada de la tupla como una lista mientras deja intacta la tupla original. | `sorted(tupla)`        |
+| `in` / `not in` | Estos operadores indican si un item es parte de una tupla o no. | `9 in tupla`           |
+| Concatenación   | Es la "suma" de tuplas. La concatenación se realiza con el signo `+` | `tupla + ('numbers',)` |
+| Replicación     | La replicación de tuplas se da con el signo `* `y un número, el número indica cuantas veces se replicará la tupla. | `tupla * 2`            |
+| Slicing         | Los slices son secciones que contienen más de un valor. Generalmente los slices tienen dos argumentos pero también pueden lucir así `[:n]` o así `[n:]`, el primero indica que el slice iniciará en 0 hasta n-1 y el segundo que iniciará desde n hasta el final de la lista. Si en algún momento te encuentras un slice así `[:]` significa que abarcará todos los valores de una tupla. | `tupla[0::2]`          |
+
+
+
+**Métodos de tuplas**
+
+| Método    | Sintaxis                 | Descripción                                                  |
+| --------- | ------------------------ | ------------------------------------------------------------ |
+| `count()` | `tuple_name.count(item)` | Devuelve el número de veces que un item aparece en la tupla. |
+| `index()` | `tuple_name.index(item)` | Devuelve el índice del item en la tupla. Si el item aparece más de una vez, devolverá el índice del item que aparezca primero. Si el item no se encuentra en la tupla, entonces tendrás un *ValueError*. |
 
 
 
@@ -715,6 +722,12 @@ Si importas el módulo `pprint` en tus programas. tendrás acceso a las funcione
 `pprint.pprint()`: Es útil cuando el propio diccionarios contiene listas anidadas o diccionarios.
 
 `pprint.pformat`: Devuelve el texto como un string en lugar de mostrarlo en la pantalla.
+
+
+
+## Sets
+
+
 
 
 
