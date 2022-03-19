@@ -729,6 +729,25 @@ Si importas el módulo `pprint` en tus programas. tendrás acceso a las funcione
 
 
 
+**Operaciones matemáticas**
+
+| Operación           | Símbolo | Sintaxis                                                     | Descripción                                                  | Ejemplo |
+| ------------------- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
+| union               | `|`     | `<set>.union(<other_iterables>)` <br />`<set> | <other_set_1> | ... | <other_set_n>` | Esta operación devuelve un nuevo set con todos los elementos de set y other_iterables u other_sets. |         |
+| difference          | `-`     | `<set>.difference(other_iterables)`<br />`<set> - <other_set_1> - ... - <other_set_n>` | Devuelve otro set con los elementos del set original que no estaban en other_iterables u other_sets. |         |
+| intersection        | `&`     | `<set>.intersection(<other_iterables>)`<br />`<set> & <other_set_1> & ... & <other_set_n>` | Intersection regresa un nuevo set con todos los elementos en común del set original y other_iterables u other_sets. |         |
+| symetric difference | `^`     | `<set>.symmetric_difference(<other_iterables>)`<br />`<set> ^ <other_set>` | Retorna un set que contiene elementos que están en set o en other_iterables u other_sets pero no en ambos. |         |
+
+
+
+**Métodos**
+
+| Método         | Símbolo | Sintaxis                                                     | Descripción                                                  |
+| -------------- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `issubset()`   | `<=`    | `<set>.issubset(other_collection)`<br />`<set> <= <other_set>` | Este método devuelve `True` si cada elemento de set está en other_collection u other_set. |
+| `issuperset()` | `>=`    | `<set>.issuperset(other_collection)`<br />`<set> >= <other_set>` | Es usado para verificar si cada elemento de other_collection u other_set se encuentra en set y devuelve `True` en caso de que sea cierto. |
+| `isdisjoint()` |         | `<set>.isdisjoint(other_collection)`                         | Este método se usa para comprobar que set **no tiene elementos en común** con other_collection. El método acepta cualquier tipo de dato iterable o set como argumento. El método devuelve `True` si no tienen nada en común. |
+
 
 
 ## Strings
