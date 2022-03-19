@@ -733,7 +733,7 @@ Si importas el módulo `pprint` en tus programas. tendrás acceso a las funcione
 
 | Operación           | Símbolo | Sintaxis                                                     | Descripción                                                  |
 | ------------------- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| union               | \|      | `<set>.union(other_iterables)`<br />`<set> | <other_set_1> | ... | <other_set_n>` | Esta operación devuelve un nuevo set con todos los elementos de set y other_iterables u other_sets. |
+| union               | `|`     | `set.union(other_iterables)`<br />`set | other_set_1 | ... | other_set_n` | Esta operación devuelve un nuevo set con todos los elementos de set y other_iterables u other_sets. |
 | difference          | `-`     | `<set>.difference(other_iterables)`<br />`<set> - <other_set_1> - ... - <other_set_n>` | Devuelve otro set con los elementos del set original que no estaban en other_iterables u other_sets. |
 | intersection        | `&`     | `<set>.intersection(<other_iterables>)`<br />`<set> & <other_set_1> & ... & <other_set_n>` | Intersection regresa un nuevo set con todos los elementos en común del set original y other_iterables u other_sets. |
 | symetric difference | `^`     | `<set>.symmetric_difference(<other_iterables>)`<br />`<set> ^ <other_set>` | Retorna un set que contiene elementos que están en set o en other_iterables u other_sets pero no en ambos. |
