@@ -731,12 +731,21 @@ Si importas el módulo `pprint` en tus programas. tendrás acceso a las funcione
 
 **Operaciones matemáticas**
 
-| Operación           | Símbolo | Sintaxis                                                     | Descripción                                                  |
-| ------------------- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| union               | \|      | `<set>.union(other_iterables)`                               | Devuelve un nuevo set con los elementos de set y othr_iterables u other_sets. |
-| difference          | `-`     | `<set>.difference(other_iterables)`<br />`<set> - <other_set_1> - ... - <other_set_n>` | Devuelve otro set con los elementos del set original que no estaban en other_iterables u other_sets. |
-| intersection        | `&`     | `<set>.intersection(<other_iterables>)`<br />`<set> & <other_set_1> & ... & <other_set_n>` | Intersection regresa un nuevo set con todos los elementos en común del set original y other_iterables u other_sets. |
-| symetric difference | `^`     | `<set>.symmetric_difference(<other_iterables>)`<br />`<set> ^ <other_set>` | Retorna un set que contiene elementos que están en set o en other_iterables u other_sets pero no en ambos. |
+Supongamos que tenemos los siguientes sets
+
+```python
+>>> jugos = {'Boing', 'Vigor', 'Jumex', 'Valle', 'KLoco','Chaparritas'}
+>>> jugos_2 = {'Frutsi', 'Pau Pau', 'Jumex', 'Boing', 'Friolin', 'Lulu'}
+```
+
+
+
+| Operación           | Símbolo | Sintaxis                                                     | Descripción                                                  | Ejemplo                               |
+| ------------------- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------- |
+| union               | \|      | `<set>.union(other_iterables)`                               | Devuelve un nuevo set con los elementos de set y othr_iterables u other_sets. | `jugos.union(jugos_2)`                |
+| difference          | `-`     | `<set>.difference(other_iterables)`<br />`<set> - <other_set_1> - ... - <other_set_n>` | Devuelve otro set con los elementos del set original que no estaban en other_iterables u other_sets. | `jugos.difference(jugos_2)`           |
+| intersection        | `&`     | `<set>.intersection(<other_iterables>)`<br />`<set> & <other_set_1> & ... & <other_set_n>` | Intersection regresa un nuevo set con todos los elementos en común del set original y other_iterables u other_sets. | `jugos.interseccion(jugos_2)`         |
+| symetric difference | `^`     | `<set>.symmetric_difference(<other_iterables>)`<br />`<set> ^ <other_set>` | Retorna un set que contiene elementos que están en set o en other_iterables u other_sets pero no en ambos. | `jugos.symmetric_difference(jugos_2)` |
 
 
 
