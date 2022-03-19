@@ -751,11 +751,18 @@ Supongamos que tenemos los siguientes sets
 
 **Métodos**
 
-| Método         | Símbolo | Sintaxis                                                     | Descripción                                                  |
-| -------------- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `issubset()`   | `<=`    | `<set>.issubset(other_collection)`<br />`<set> <= <other_set>` | Este método devuelve `True` si cada elemento de set está en other_collection u other_set. |
-| `issuperset()` | `>=`    | `<set>.issuperset(other_collection)`<br />`<set> >= <other_set>` | Es usado para verificar si cada elemento de other_collection u other_set se encuentra en set y devuelve `True` en caso de que sea cierto. |
-| `isdisjoint()` |         | `<set>.isdisjoint(other_collection)`                         | Este método se usa para comprobar que set **no tiene elementos en común** con other_collection. El método acepta cualquier tipo de dato iterable o set como argumento. El método devuelve `True` si no tienen nada en común. |
+```python
+>>> frutas = {'maracuya', 'manzana', 'uvas', 'cerezas', 'guanabana'}
+>>> frutas_2 = {'guayaba', 'maracuya', 'sandía', 'manzana','papaya', 'cerezas','naranaja', 'pera', 'coco', 'guanabana', 'kiwi', 'uvas'}
+```
+
+
+
+| Método         | Símbolo | Sintaxis                                                     | Descripción                                                  | Ejemplo                       |
+| -------------- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------- |
+| `issubset()`   | `<=`    | `<set>.issubset(other_collection)`<br />`<set> <= <other_set>` | Este método devuelve `True` si cada elemento de set está en other_collection u other_set. | `frutas.issubset(frutas_2)`   |
+| `issuperset()` | `>=`    | `<set>.issuperset(other_collection)`<br />`<set> >= <other_set>` | Es usado para verificar si cada elemento de other_collection u other_set se encuentra en set y devuelve `True` en caso de que sea cierto. | `frutas.issuperset(frutas_2)` |
+| `isdisjoint()` |         | `<set>.isdisjoint(other_collection)`                         | Este método se usa para comprobar que set **no tiene elementos en común** con other_collection. El método acepta cualquier tipo de dato iterable o set como argumento. El método devuelve `True` si no tienen nada en común. | `frutas.isdisjoint(frutas_2)` |
 
 
 
