@@ -733,7 +733,7 @@ Los sets pueden ser creados con llaves **{ }** con los items separados por comas
 
 
 
-> Si quieres crear un set vacío debes usar la función no las llaves.
+> Si quieres crear un set vacío debes usar la función `set()` no las llaves.
 
 
 
