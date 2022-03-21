@@ -727,6 +727,20 @@ Si importas el módulo `pprint` en tus programas. tendrás acceso a las funcione
 
 ## Sets
 
+Un set es una colección de datos desordenada, mutable y sin elementos duplicados (todos los items deben ser distintos). Los sets pueden almacenar cualquier tipo de datos, siempre y cuando sean tipo hash.
+
+Los sets pueden ser creados con llaves **{ }** con los items separados por comas o con la función `set()`.
+
+
+
+> Si quieres crear un set vacío debes usar la función no las llaves.
+
+
+
+Puedes usar operadores `in` y `not in` en los sets, también iterarlos en ciclos for, pero estos no pueden ser ordenados ni indexados.
+
+Los sets ahorran más espacio que un diccionario y son más rápidos que una lista, a menos que se necesite realizar un seguimiento de los elementos secuenciados o duplicados.
+
 
 
 **Operaciones matemáticas**
@@ -736,6 +750,8 @@ Supongamos que tenemos los siguientes sets
 ```python
 >>> jugos = {'Boing', 'Vigor', 'Jumex', 'Valle', 'KLoco','Chaparritas'}
 >>> jugos_2 = {'Frutsi', 'Pau Pau', 'Jumex', 'Boing', 'Friolin', 'Lulu'}
+>>> jugos_3 = {'Pau Pau', 'Bida', 'Ami', 'Delaware', 'Yoli', 'Florida 7'}
+>>> jugos_4 = {'Tampico', 'Boing', 'Bida', 'Zubba', 'Frutsi', 'FrutiQueko'}
 ```
 
 
@@ -747,9 +763,28 @@ Supongamos que tenemos los siguientes sets
 | intersection        | `&`     | `<set>.intersection(<other_iterables>)`<br />`<set> & <other_set_1> & ... & <other_set_n>` | Intersection regresa un nuevo set con todos los elementos en común del set original y other_iterables u other_sets. | `jugos.interseccion(jugos_2)`         |
 | symetric difference | `^`     | `<set>.symmetric_difference(<other_iterables>)`<br />`<set> ^ <other_set>` | Retorna un set que contiene elementos que están en set o en other_iterables u other_sets pero no en ambos. | `jugos.symmetric_difference(jugos_2)` |
 
+Una diferencia simétrica de más de dos sets resulta un set que incluye los elementos únicos de cada set y los elementos compartidos entre más de dos sets. Para obtener los elementos únicos de cada set debemos hacer la intersección y la unión en parejas y después restarla a la diferencia simétrica.
+
+```python
+>>> jugos ^ jugos_2 ^ jugos_3 ^ jugos_4
+{'Florida 7', 'Yoli', 'Lulu', 'Ami', 'Boing', 'Chaparritas', 'Delaware', 'Friolin', 'Tampico', 'KLoco', 'Vigor', 'Valle', 'FrutiQueko', 'Zubba'}
+
+
+>>> interseccion = (jugos & jugos_2 | jugos & jugos_3 | jugos & jugos_4 | jugos_2 & jugos_3 | jugos_2 & jugos_4 | jugos_3 & jugos_4)
+>>>
+>>> interseccion
+{'Jumex', 'Bida', 'Boing', 'Pau Pau', 'Frutsi'}
+>>> unicos = (jugos ^ jugos_2 ^ jugos_3 ^ jugos_4) - interseccion
+>>>
+>>> unicos
+{'Florida 7', 'Tampico', 'Yoli', 'KLoco', 'Vigor', 'Lulu', 'Ami', 'Chaparritas', 'Delaware', 'Valle', 'FrutiQueko', 'Zubba', 'Friolin'}
+```
+
 
 
 **Métodos**
+
+Tomemos en cuenta los siguientes sets para ejemplificar el uso de los métodos:
 
 ```python
 >>> frutas = {'maracuya', 'manzana', 'uvas', 'cerezas', 'guanabana'}
