@@ -26,8 +26,6 @@ Para poder ejecutar python en cmd, únicamente es necesario escribir python segu
 python a0_hola_mundo.py
 ```
 
- 
-
 ---
 
 
